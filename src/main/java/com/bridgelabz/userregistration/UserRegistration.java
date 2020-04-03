@@ -5,6 +5,7 @@ public class UserRegistration {
     String emailPattern="^[a-zA-Z]+([+]?[-]?[.]?[_]?[a-zA-Z0-9]+)?[@]{1}[a-z]+[.]{1}[a-z]{2,}([.]?[a-z]+)?$";
     String mobilePattern="[0-9]{2}[ ]{1}[0-9]{10}$";
     String passwordPattern="[a-zA-Z0-9]{8,}$";
+    String passwordPattern2="^([a-zA-Z0-9]*[A-Z]+[a-zA-Z0-9]*)+$";
 
     public static void main(String[] args) {
         System.out.println("Welcome To User Registration");
@@ -22,5 +23,13 @@ public class UserRegistration {
 
     public boolean checkPassword(String Password ) {
         return Pattern.matches(passwordPattern,Password);
+    }
+
+
+    public boolean checkPassword2(String Password2) {
+        if (Password2.length() >= 8)
+            return (Pattern.matches(passwordPattern2, Password2));
+        else
+            return false;
     }
 }

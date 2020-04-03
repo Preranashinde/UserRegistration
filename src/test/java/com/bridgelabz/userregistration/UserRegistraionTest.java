@@ -67,4 +67,16 @@ public class UserRegistraionTest {
         boolean Password=object.checkPassword("1234");
         Assert.assertFalse(Password);
     }
+
+    @Test
+    public void password2_ValidThenTrue() {
+        boolean Password2=object.checkPassword2("PreranaShinde");
+        Assert.assertTrue(Password2);
+    }
+
+    @Test
+    public void password2_InvalidThenFalse() {
+        boolean Password2=object.checkPassword2("preranashinde");
+        Assert.assertFalse(Password2);
+    }
 }
