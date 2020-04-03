@@ -16,4 +16,16 @@ public class UserRegistraionTest {
         boolean firstName=object.checkName("firstname");
         Assert.assertFalse(firstName);
     }
+
+    @Test
+    public void givenUserLastName_validThenTrue() {
+        boolean lastName = object.checkName("LastName");
+        Assert.assertTrue(lastName);
+    }
+
+    @Test
+    public void givenUserLastName_invalidThenFalse() {
+        boolean lastName = object.checkName("lastname");
+        Assert.assertFalse(lastName);
+    }
 }
