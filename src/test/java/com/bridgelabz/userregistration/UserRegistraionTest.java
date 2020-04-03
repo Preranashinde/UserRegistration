@@ -55,4 +55,16 @@ public class UserRegistraionTest {
         boolean MobileNumber=object.checkMobile("234567890");
         Assert.assertFalse(MobileNumber);
     }
+
+    @Test
+    public void password_ValidThenTrue() {
+        boolean Password=object.checkPassword("12345678");
+        Assert.assertTrue(Password);
+    }
+
+    @Test
+    public void password_InvalidThenFalse() {
+        boolean Password=object.checkPassword("1234");
+        Assert.assertFalse(Password);
+    }
 }
